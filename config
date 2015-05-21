@@ -1,0 +1,208 @@
+# rawdog config for planet.openvz.org (inspired by https://planetkde.org/)
+# https://github.com/Planet-Kubb/rawdog/blob/master/rawdog/config (http://planetkubb.com/)
+# https://projects.kde.org/projects/websites/planet-kde-org/repository
+
+#include FILENAME
+
+plugindirs plugins
+splitstate false
+maxarticles 30
+maxage 0
+expireage 1d
+keepmin 3
+
+# Whether to only display articles that are currently included in a feed
+# (useful for "planet" pages where you only want to display the current
+# articles from several feeds). If this is false, rawdog will keep a
+# history of older articles.
+currentonly false
+
+# Whether to divide the articles up by day, writing a "dayformat" heading
+# before each set.
+daysections true
+
+# The format to write day headings in. See "man strftime" for more
+# information; for example:
+# %A, %d %B           Wednesday, 21 January
+# %Y-%m-%d            2004-01-21 (ISO 8601 format)
+dayformat %A, %d %B
+
+# Whether to divide the articles up by time, writing a "timeformat" heading
+# before each set.
+timesections true
+
+timeformat %H:%M
+
+# The format to display feed update and article times in. For example:
+# %H:%M, %A, %d %B    18:07, Wednesday, 21 January
+# %Y-%m-%d %H:%M      2004-01-21 18:07 (ISO 8601 format)
+datetimeformat %H:%M, %A, %d %B
+
+# The page template file to use, or "default" to use the built-in template
+# (which is probably sufficient for most users). Use "rawdog -s page" to show
+# the template currently in use as a starting-point for customisation.
+# The following strings will be replaced in the output:
+# __version__         The rawdog version in use
+# __refresh__         The HTML 4 <meta http-equiv="refresh" ...> header
+# __items__           The aggregated items
+# __num_items__       The number of items on the page
+# __feeds__           The feed list
+# __num_feeds__       The number of feeds listed
+# You can define additional strings using "define" in this config file; for
+# example, if you say "define myname Adam Sampson", then "__myname__" will be
+# replaced by "Adam Sampson" in the output.
+pagetemplate default
+
+# Similarly, the template used for each item shown. Use "rawdog -s item" to
+# show the template currently in use as a starting-point for customisation.
+# The following strings will be replaced in the output:
+# __title__           The item title (as an HTML link, if possible)
+# __title_no_link__   The item title (as text)
+# __url__             The item's URL, or the empty string if it doesn't
+#                     have one
+# __guid__            The item's GUID, or the empty string if it doesn't
+#                     have one
+# __description__     The item's descriptive text, or the empty string
+#                     if it doesn't have a description
+# __date__            The item's date as provided by the feed
+# __added__           The date the article was received by rawdog
+# __hash__            A hash of the article (useful for summary pages)
+#
+# All of the __feed_X__ strings from feeditemtemplate below will also be
+# expanded here, for the feed that the article came from.
+#
+# You can define additional strings on a per-feed basis by using the
+# "define_X" feed option; see the description of "feed" below for more
+# details.
+#
+# Simple conditional expansion is possible by saying something like
+# "__if_items__ hello __endif__"; the text between the if and endif will
+# only be included if __items__ would expand to something other than
+# the empty string. Ifs can be nested, and __else__ is supported.
+# (This also works for the other templates, but it's most useful here.)
+itemtemplate default
+
+# The template used to generate the feed list (__feeds__ above). Use "rawdog
+# -s feedlist" to show the current template.
+# The following strings will be replaced in the output:
+# __feeditems__       The feed items
+feedlisttemplate default
+
+# The template used to generate each item in the feed list. Use "rawdog
+# -s feeditem" to show the current template.
+# The following strings will be replaced in the output:
+# __feed_id__         The feed's title with non-alphanumeric characters
+#                     (and HTML markup) removed (useful for per-feed
+#                     styles); you can use the "id" feed option below to
+#                     set a custom ID if you prefer
+# __feed_hash__       A hash of the feed URL (useful for per-feed styles)
+# __feed_title__      The feed title (as an HTML link, if possible)
+# __feed_title_no_link__
+#                     The feed title (as text)
+# __feed_url__        The feed URL
+# __feed_icon__       An "XML button" linking to the feed URL
+# __feed_last_update__
+#                     The time when the feed was last updated
+# __feed_next_update__
+#                     The time when the feed will next need updating
+feeditemtemplate default
+
+outputfile output.html
+#outputfile /home/you/public_html/rawdog.html
+
+# Whether to use a <meta http-equiv="Refresh" ...> tag in the generated
+# HTML to indicate that the page should be refreshed automatically. If
+# this is turned on, then the page will refresh every N minutes, where N
+# is the shortest feed period value specified below.
+# (This works by controlling whether the default template includes
+# __refresh__; if you use a custom template, __refresh__ is always
+# available.)
+userefresh true
+
+# Whether to show the list of active feeds in the generated HTML.
+# (This works by controlling whether the default template includes
+# __feeds__; if you use a custom template, __feeds__ is always
+# available.)
+showfeeds true
+
+numthreads 5
+
+# The time that rawdog will wait before considering a feed unreachable
+# when trying to connect. If you're getting lots of timeout errors and
+# are on a slow connection, increase this.
+# (Unlike other times in this file, this will be assumed to be in
+# seconds if no unit is specified.)
+timeout 30s
+
+ignoretimeouts false
+
+showtracebacks false
+
+# Whether to display verbose status messages saying what rawdog's doing
+# while it runs. Specifying -v or --verbose on the command line is
+# equivalent to saying "verbose true" here.
+verbose false
+
+# Whether to attempt to fix bits of HTML that should start with a
+# block-level element (such as article descriptions) by prepending "<p>"
+# if they don't already start with a block-level element.
+blocklevelhtml true
+
+# Whether to attempt to turn feed-provided HTML into valid HTML.
+# The most common problem that this solves is a non-closed element in an
+# article causing formatting problems for the rest of the page.
+# For this option to have any effect, you need to have PyTidyLib or mx.Tidy
+# installed.
+tidyhtml true
+
+sortbyfeeddate true
+
+# Whether to consider articles' unique IDs or GUIDs when updating rawdog's
+# database. If you turn this off, then rawdog will create a new article in its
+# database when it sees an updated version of an existing article in a feed.
+# You probably want this turned on.
+useids true
+hideduplicates id
+
+newfeedperiod 3h
+changeconfig true
+
+feeddefaults
+
+# Personal blogs
+feed 1d http://www.stableit.ru/feeds/posts/default?alt=rss
+	define_name Pavel Odintsov
+feed 1d https://4arodej.wordpress.com/category/openvz/feed/
+feed 1d http://habrahabr.ru/rss/search/?q=openvz&target_type=posts
+	define_name Habrahabr posts
+feed 1d http://habrahabr.ru/rss/search/?q=openvz&target_type=comments
+	define_name Habrahabr comments
+
+# OpenVZ news
+feed 1d https://openvz.org/w/index.php?title=News/updates&action=feed&feed=rss
+	define_name OpenVZ news
+feed 1d http://blog.openvz.org/data/rss
+	define_name OpenVZ news
+feed 1d http://gplusrss.com/rss/feed/f1b37223a6ce41a8563b34171acdb47b50cf76c5a823b
+	define_name OpenVZ news
+#feed 1d http://forum.openvz.org/feed.php?mode=m&l=1&frm=2&format=rss
+feed 1d http://www.slideshare.net/rss/user/openvz
+	define_name OpenVZ news
+feed 1d https://www.youtube.com/feeds/videos.xml?channel_id=UCF1QeKAgIZ8ZQFaqUxPp87w
+	define_name OpenVZ news
+feed 1d http://gdata.youtube.com/feeds/base/videos?q=openvz&orderby=published&v=2
+	define_name OpenVZ news
+
+# Yandex.Blogs
+feed 1d https://blogs.yandex.ru/search.rss?text=openvz
+#feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=forum&holdres=mark
+#feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=all&holdres=mark
+
+# OWL
+feed 1d http://rss.gmane.org/messages/complete/gmane.comp.security.openwall.announce
+feed 1d http://rss.gmane.org/messages/excerpts/gmane.comp.security.openwall.announce
+feed 1d http://page2rss.com/rss/de340a3a20c6afaf4faf05eeb2967797
+
+# Proxmox
+feed 1d http://pve.proxmox.com/mediawiki/index.php?title=Proxmox_VE_News&action=feed&feed=rss
+
