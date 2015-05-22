@@ -177,6 +177,12 @@ feed 1d http://habrahabr.ru/rss/search/?q=openvz&target_type=posts
 	define_name Habrahabr posts
 feed 1d http://habrahabr.ru/rss/search/?q=openvz&target_type=comments
 	define_name Habrahabr comments
+feed 1d http://ru-openvz.livejournal.com/data/rss
+feed 1d http://blog.the-jedi.co.uk/tag/openvz/feed/
+feed 1d https://tresnet.ru/archives/tag/openvz/feed
+feed 1d http://supmag.ru/?feed=rss2&tag=openvz
+feed 1d http://www.montanalinux.org/taxonomy/term/4/0/feed
+feed 1d http://blog.tataranovich.com/feeds/posts/default/-/openvz
 
 # OpenVZ news
 feed 1d https://openvz.org/w/index.php?title=News/updates&action=feed&feed=rss
@@ -205,4 +211,3 @@ feed 1d http://page2rss.com/rss/de340a3a20c6afaf4faf05eeb2967797
 
 # Proxmox
 feed 1d http://pve.proxmox.com/mediawiki/index.php?title=Proxmox_VE_News&action=feed&feed=rss
-
