@@ -51,7 +51,8 @@ datetimeformat %H:%M, %A, %d %B
 # You can define additional strings using "define" in this config file; for
 # example, if you say "define myname Adam Sampson", then "__myname__" will be
 # replaced by "Adam Sampson" in the output.
-pagetemplate default
+pagetemplate template_page.html
+#pagetemplate default
 
 # Similarly, the template used for each item shown. Use "rawdog -s item" to
 # show the template currently in use as a starting-point for customisation.
@@ -80,13 +81,15 @@ pagetemplate default
 # only be included if __items__ would expand to something other than
 # the empty string. Ifs can be nested, and __else__ is supported.
 # (This also works for the other templates, but it's most useful here.)
-itemtemplate default
+itemtemplate template_item.html
+#pagetemplate default
 
 # The template used to generate the feed list (__feeds__ above). Use "rawdog
 # -s feedlist" to show the current template.
 # The following strings will be replaced in the output:
 # __feeditems__       The feed items
-feedlisttemplate default
+feedlisttemplate template_feedlist.html
+#pagetemplate default
 
 # The template used to generate each item in the feed list. Use "rawdog
 # -s feeditem" to show the current template.
@@ -105,10 +108,10 @@ feedlisttemplate default
 #                     The time when the feed was last updated
 # __feed_next_update__
 #                     The time when the feed will next need updating
-feeditemtemplate default
+feeditemtemplate template_feeditem.html
+#pagetemplate default
 
 outputfile output.html
-#outputfile /home/you/public_html/rawdog.html
 
 # Whether to use a <meta http-equiv="Refresh" ...> tag in the generated
 # HTML to indicate that the page should be refreshed automatically. If
@@ -148,19 +151,8 @@ verbose false
 # if they don't already start with a block-level element.
 blocklevelhtml true
 
-# Whether to attempt to turn feed-provided HTML into valid HTML.
-# The most common problem that this solves is a non-closed element in an
-# article causing formatting problems for the rest of the page.
-# For this option to have any effect, you need to have PyTidyLib or mx.Tidy
-# installed.
 tidyhtml true
-
 sortbyfeeddate true
-
-# Whether to consider articles' unique IDs or GUIDs when updating rawdog's
-# database. If you turn this off, then rawdog will create a new article in its
-# database when it sees an updated version of an existing article in a feed.
-# You probably want this turned on.
 useids true
 hideduplicates id
 
@@ -170,44 +162,41 @@ changeconfig true
 feeddefaults
 
 # Personal blogs
-feed 1d http://www.stableit.ru/feeds/posts/default?alt=rss
-	define_name Pavel Odintsov
-feed 1d https://4arodej.wordpress.com/category/openvz/feed/
-feed 1d http://habrahabr.ru/rss/search/?q=openvz&target_type=posts
+feed 5d http://www.stableit.ru/feeds/posts/default?alt=rss
+	define name Pavel Odintsov
+feed 5d https://4arodej.wordpress.com/category/openvz/feed/
+feed 5d http://habrahabr.ru/rss/search/?q=openvz&target_type=posts
 	define_name Habrahabr posts
-feed 1d http://habrahabr.ru/rss/search/?q=openvz&target_type=comments
+feed 5d http://habrahabr.ru/rss/search/?q=openvz&target_type=comments
 	define_name Habrahabr comments
-feed 1d http://ru-openvz.livejournal.com/data/rss
-feed 1d http://blog.the-jedi.co.uk/tag/openvz/feed/
-feed 1d https://tresnet.ru/archives/tag/openvz/feed
-feed 1d http://supmag.ru/?feed=rss2&tag=openvz
-feed 1d http://www.montanalinux.org/taxonomy/term/4/0/feed
-feed 1d http://blog.tataranovich.com/feeds/posts/default/-/openvz
+feed 5d http://ru-openvz.livejournal.com/data/rss
+feed 5d http://blog.the-jedi.co.uk/tag/openvz/feed/
+feed 5d https://tresnet.ru/archives/tag/openvz/feed
+feed 5d http://supmag.ru/?feed=rss2&tag=openvz
+feed 5d http://www.montanalinux.org/taxonomy/term/4/0/feed
+feed 5d http://blog.tataranovich.com/feeds/posts/default/-/openvz
+feed 5d http://k001.livejournal.com/data/rss?tag=openvz
+feed 5d http://openvz.livejournal.com/data/rss
+feed 5d http://knutov.livejournal.com/data/rss?tag=openvz
 
 # OpenVZ news
-feed 1d https://openvz.org/w/index.php?title=News/updates&action=feed&feed=rss
+feed 5d https://openvz.org/w/index.php?title=News/updates&action=feed&feed=rss
 	define_name OpenVZ news
-feed 1d http://blog.openvz.org/data/rss
+feed 5d http://gplusrss.com/rss/feed/f1b37223a6ce41a8563b34171acdb47b50cf76c5a823b
 	define_name OpenVZ news
-feed 1d http://gplusrss.com/rss/feed/f1b37223a6ce41a8563b34171acdb47b50cf76c5a823b
+#feed 5d http://www.slideshare.net/rss/user/openvz
+#	define_name OpenVZ news
+feed 5d https://www.youtube.com/feeds/videos.xml?channel_id=UCF1QeKAgIZ8ZQFaqUxPp87w
 	define_name OpenVZ news
-#feed 1d http://forum.openvz.org/feed.php?mode=m&l=1&frm=2&format=rss
-feed 1d http://www.slideshare.net/rss/user/openvz
-	define_name OpenVZ news
-feed 1d https://www.youtube.com/feeds/videos.xml?channel_id=UCF1QeKAgIZ8ZQFaqUxPp87w
-	define_name OpenVZ news
-feed 1d http://gdata.youtube.com/feeds/base/videos?q=openvz&orderby=published&v=2
-	define_name OpenVZ news
+#feed 5d http://gdata.youtube.com/feeds/base/videos?q=openvz&orderby=published&v=2
+#	define name OpenVZ news
 
 # Yandex.Blogs
-feed 1d https://blogs.yandex.ru/search.rss?text=openvz
+#feed 1d https://blogs.yandex.ru/search.rss?text=openvz
 #feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=forum&holdres=mark
 #feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=all&holdres=mark
 
 # OWL
-feed 1d http://rss.gmane.org/messages/complete/gmane.comp.security.openwall.announce
-feed 1d http://rss.gmane.org/messages/excerpts/gmane.comp.security.openwall.announce
-feed 1d http://page2rss.com/rss/de340a3a20c6afaf4faf05eeb2967797
-
-# Proxmox
-feed 1d http://pve.proxmox.com/mediawiki/index.php?title=Proxmox_VE_News&action=feed&feed=rss
+#feed 1d http://rss.gmane.org/messages/complete/gmane.comp.security.openwall.announce
+#feed 1d http://rss.gmane.org/messages/excerpts/gmane.comp.security.openwall.announce
+#feed 1d http://page2rss.com/rss/de340a3a20c6afaf4faf05eeb2967797
