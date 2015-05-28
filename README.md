@@ -13,6 +13,8 @@ see the [PlanetOpenVZ](https://openvz.org/PlanetOpenVZ) wiki page.
 ## How to setup:
 
 ```
+$ sudo yum install -y git rawdog
+$ git clone https://github.com/ligurio/openvz-planet /var/www/planet.openvz.org/
 $ rawdog -d . -c config -u -w
 ```
 
