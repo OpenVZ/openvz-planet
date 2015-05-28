@@ -184,17 +184,17 @@ feed 5d https://openvz.org/w/index.php?title=News/updates&action=feed&feed=rss
 	define_name OpenVZ news
 feed 5d http://gplusrss.com/rss/feed/f1b37223a6ce41a8563b34171acdb47b50cf76c5a823b
 	define_name OpenVZ news
-#feed 5d http://www.slideshare.net/rss/user/openvz
-#	define_name OpenVZ news
+feed 5d http://www.slideshare.net/rss/user/openvz
+	define_name OpenVZ news
 feed 5d https://www.youtube.com/feeds/videos.xml?channel_id=UCF1QeKAgIZ8ZQFaqUxPp87w
 	define_name OpenVZ news
 #feed 5d http://gdata.youtube.com/feeds/base/videos?q=openvz&orderby=published&v=2
 #	define name OpenVZ news
 
 # Yandex.Blogs
-#feed 1d https://blogs.yandex.ru/search.rss?text=openvz
-#feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=forum&holdres=mark
-#feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=all&holdres=mark
+feed 1d https://blogs.yandex.ru/search.rss?text=openvz
+feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=forum&holdres=mark
+feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=all&holdres=mark
 
 # OWL
 #feed 1d http://rss.gmane.org/messages/complete/gmane.comp.security.openwall.announce
