@@ -18,6 +18,12 @@ $ git clone https://github.com/ligurio/openvz-planet /var/www/planet.openvz.org/
 $ rawdog -d . -c config -u -w
 ```
 
+```
+$ crontab -l
+
+*/5 * * * *     cd /var/www/planet.openvz.org; git pull; rawdog -d . -u -w
+```
+
 ## See also:
 
 * [Ubuntu Planet](http://planet.ubuntu.com/)
