@@ -111,7 +111,7 @@ feedlisttemplate template_feedlist.html
 feeditemtemplate template_feeditem.html
 #pagetemplate default
 
-outputfile output.html
+outputfile index.html
 
 # Whether to use a <meta http-equiv="Refresh" ...> tag in the generated
 # HTML to indicate that the page should be refreshed automatically. If
