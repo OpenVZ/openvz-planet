@@ -201,7 +201,7 @@
                     (ele[i].style.display = "block");
                 document.getElementById("toggleenglish").checked = true;
             };
-            if (french == "none") {
+            if (english == "none") {
                 for (var i = 0, j = ele.length; i < j; i++)
                     (ele[i].style.display = "none");
                 document.getElementById("toggleenglish").checked = false;
