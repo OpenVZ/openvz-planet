@@ -209,28 +209,7 @@ feed 45m http://www.slideshare.net/rss/user/openvz
 feed 45m https://blogs.yandex.ru/search.rss?text=openvz
 	define_name Yandex.Blogs
 	define_feedclass russian
-feed 45m https://blogs.yandex.ru/search.rss?text=openvz&ft=forum&holdres=mark
-	define_name Yandex.Blogs
-	define_feedclass russian
-feed 45m https://blogs.yandex.ru/search.rss?text=openvz&ft=all&holdres=mark
-	define_name Yandex.Blogs
-	define_feedclass russian
-feed 45m https://blogs.yandex.ru/search.rss?text=criu
-	define_name Yandex.Blogs
-	define_feedclass russian
-feed 45m https://blogs.yandex.ru/search.rss?text=criu&ft=forum&holdres=mark
-	define_name Yandex.Blogs
-	define_feedclass russian
-feed 45m https://blogs.yandex.ru/search.rss?text=criu&ft=all&holdres=mark
-	define_name Yandex.Blogs
-	define_feedclass russian
 feed 45m https://blogs.yandex.ru/search.rss?text=virtuozzo
-	define_name Yandex.Blogs
-	define_feedclass russian
-feed 45m https://blogs.yandex.ru/search.rss?text=virtuozzo&ft=forum&holdres=mark
-	define_name Yandex.Blogs
-	define_feedclass russian
-feed 45m https://blogs.yandex.ru/search.rss?text=virtuozzo&ft=all&holdres=mark
 	define_name Yandex.Blogs
 	define_feedclass russian
 feed 45m http://stackoverflow.com/feeds/tag/openvz
