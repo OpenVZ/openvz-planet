@@ -8,7 +8,7 @@ Planet OpenVZ is a window into the world, work and lives of OpenVZ developers
 and contributors.
 
 If you are an OpenVZ Member, and would like your blog aggregated here, please
-see the [PlanetOpenVZ](https://openvz.org/PlanetOpenVZ) wiki page.
+see the [Planet OpenVZ](https://openvz.org/Planet_OpenVZ) wiki page.
 
 ## How to setup:
 

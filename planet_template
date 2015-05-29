@@ -261,7 +261,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#peeps" data-toggle="modal" data-target="#peeps">People Aggregated</a>
                     </li>
-                    <li><a href="https://openvz.org/PlanetOpenVZ">Add your Blog</a>
+                    <li><a href="https://openvz.org/Planet_OpenVZ">Add your Blog</a>
                     </li>
                     <li><a href="#socfeeds" data-toggle="modal" data-target="#socfeeds">Microblogging Feed</a>
                     </li>
