@@ -102,20 +102,6 @@
             }
         }
 
-        function toggledot() {
-            var ele = document.getElementsByClassName("dot");
-            for (var i = 0, j = ele.length; i < j; i++)
-                if (ele[i].style.display == "block") {
-                    ele[i].style.display = "none";
-                    document.getElementById("toggledot").checked = false;
-                    createCookie("dot", "none", 360)
-                } else {
-                    ele[i].style.display = "block";
-                    document.getElementById("toggledot").checked = true;
-                    createCookie("dot", "block", 360)
-                }
-        }
-
         function toggleenglish() {
             var ele = document.getElementsByClassName("english");
             for (var i = 0, j = ele.length; i < j; i++)
@@ -182,18 +168,6 @@
                 createCookie("user", "block", 360);
             };
 
-            var ele = document.getElementsByClassName("dot");
-            var dot = readCookie("dot");
-            if (dot == "block") {
-                for (var i = 0, j = ele.length; i < j; i++)
-                    (ele[i].style.display = "block");
-                document.getElementById("toggledot").checked = true;
-            };
-            if (dot == "none") {
-                for (var i = 0, j = ele.length; i < j; i++)
-                    (ele[i].style.display = "none");
-                document.getElementById("toggledot").checked = false;
-            };
             var ele = document.getElementsByClassName("english");
             var english = readCookie("english");
             if (english == "block") {
@@ -268,8 +242,7 @@
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Configure Feed <span class="caret"></span></a>
                       <ul class="dropdown-menu" role="menu">
-                        <li><a href="javascript:toggledot();"><input id="toggledot" type="checkbox">&nbsp; OpenVZ.News</a></li>
-                        <li><a href="javascript:togglenews();"><input id="togglenews" type="checkbox">&nbsp; Project news</a></li>
+                        <li><a href="javascript:togglenews();"><input id="togglenews" type="checkbox">&nbsp; OpenVZ news</a></li>
                         <li><a href="javascript:toggleuser();"><input id="toggleuser" type="checkbox">&nbsp; OpenVZ user blogs</a></li>
                         <li><a href="javascript:togglerussian();"><input id="togglerussian" type="checkbox">&nbsp; Russian language blogs</a></li>
                         <li><a href="javascript:toggleenglish();"><input id="toggleenglish" type="checkbox">&nbsp; English language blogs</a></li>
