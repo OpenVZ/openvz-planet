@@ -51,8 +51,7 @@ datetimeformat %H:%M, %A, %d %B
 # You can define additional strings using "define" in this config file; for
 # example, if you say "define myname Adam Sampson", then "__myname__" will be
 # replaced by "Adam Sampson" in the output.
-pagetemplate template_page.html
-#pagetemplate default
+template planet_template
 
 # Similarly, the template used for each item shown. Use "rawdog -s item" to
 # show the template currently in use as a starting-point for customisation.
@@ -81,15 +80,13 @@ pagetemplate template_page.html
 # only be included if __items__ would expand to something other than
 # the empty string. Ifs can be nested, and __else__ is supported.
 # (This also works for the other templates, but it's most useful here.)
-itemtemplate template_item.html
-#pagetemplate default
+itemtemplate itemplate
 
 # The template used to generate the feed list (__feeds__ above). Use "rawdog
 # -s feedlist" to show the current template.
 # The following strings will be replaced in the output:
 # __feeditems__       The feed items
-feedlisttemplate template_feedlist.html
-#pagetemplate default
+#feedlisttemplate default
 
 # The template used to generate each item in the feed list. Use "rawdog
 # -s feeditem" to show the current template.
@@ -108,8 +105,7 @@ feedlisttemplate template_feedlist.html
 #                     The time when the feed was last updated
 # __feed_next_update__
 #                     The time when the feed will next need updating
-feeditemtemplate template_feeditem.html
-#pagetemplate default
+#feeditemtemplate default
 
 outputfile index.html
 
@@ -161,25 +157,30 @@ changeconfig true
 
 feeddefaults
 
-# Personal blogs
 feed 5d http://www.stableit.ru/feeds/posts/default?alt=rss
 	define name Pavel Odintsov
 feed 5d https://4arodej.wordpress.com/category/openvz/feed/
+	define name Pavel Odintsov
 feed 5d http://habrahabr.ru/rss/search/?q=openvz&target_type=posts
 	define_name Habrahabr posts
 feed 5d http://habrahabr.ru/rss/search/?q=openvz&target_type=comments
 	define_name Habrahabr comments
 feed 5d http://ru-openvz.livejournal.com/data/rss
+	define_name Russian OpenVZ community
 feed 5d http://blog.the-jedi.co.uk/tag/openvz/feed/
+	define_name Simon's Journal
 feed 5d https://tresnet.ru/archives/tag/openvz/feed
-feed 5d http://supmag.ru/?feed=rss2&tag=openvz
+	define_name Ваганов Николай
 feed 5d http://www.montanalinux.org/taxonomy/term/4/0/feed
+	define_name Scott Dowdle
 feed 5d http://blog.tataranovich.com/feeds/posts/default/-/openvz
+	define_name Andrey Tataranovich
 feed 5d http://k001.livejournal.com/data/rss?tag=openvz
+	define_name Kir Kolyshkin
 feed 5d http://openvz.livejournal.com/data/rss
+	define_name English OpenVZ community
 feed 5d http://knutov.livejournal.com/data/rss?tag=openvz
-
-# OpenVZ news
+	define_name Nick Knutov
 feed 5d https://openvz.org/w/index.php?title=News/updates&action=feed&feed=rss
 	define_name OpenVZ news
 feed 5d http://gplusrss.com/rss/feed/f1b37223a6ce41a8563b34171acdb47b50cf76c5a823b
@@ -188,15 +189,21 @@ feed 5d http://www.slideshare.net/rss/user/openvz
 	define_name OpenVZ news
 feed 5d https://www.youtube.com/feeds/videos.xml?channel_id=UCF1QeKAgIZ8ZQFaqUxPp87w
 	define_name OpenVZ news
-#feed 5d http://gdata.youtube.com/feeds/base/videos?q=openvz&orderby=published&v=2
-#	define name OpenVZ news
-
-# Yandex.Blogs
 feed 1d https://blogs.yandex.ru/search.rss?text=openvz
+	define_name Yandex.Blogs
 feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=forum&holdres=mark
+	define_name Yandex.Blogs
 feed 1d https://blogs.yandex.ru/search.rss?text=openvz&ft=all&holdres=mark
-
-# OWL
-#feed 1d http://rss.gmane.org/messages/complete/gmane.comp.security.openwall.announce
-#feed 1d http://rss.gmane.org/messages/excerpts/gmane.comp.security.openwall.announce
-#feed 1d http://page2rss.com/rss/de340a3a20c6afaf4faf05eeb2967797
+	define_name Yandex.Blogs
+feed 1d https://blogs.yandex.ru/search.rss?text=criu
+	define_name Yandex.Blogs
+feed 1d https://blogs.yandex.ru/search.rss?text=criu&ft=forum&holdres=mark
+	define_name Yandex.Blogs
+feed 1d https://blogs.yandex.ru/search.rss?text=criu&ft=all&holdres=mark
+	define_name Yandex.Blogs
+feed 1d https://blogs.yandex.ru/search.rss?text=virtuozzo
+	define_name Yandex.Blogs
+feed 1d https://blogs.yandex.ru/search.rss?text=virtuozzo&ft=forum&holdres=mark
+	define_name Yandex.Blogs
+feed 1d https://blogs.yandex.ru/search.rss?text=virtuozzo&ft=all&holdres=mark
+	define_name Yandex.Blogs
