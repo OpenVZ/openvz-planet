@@ -221,3 +221,6 @@ feed 45m http://www.quora.com/OpenVZ/rss
 feed 45m http://www.reddit.com/r/virtuozzo/.rss
 	define_name Reddit
 	define_feedclass english
+feed 45m https://www.cloudlinux.com/blog/rss/rss2/
+	define_name CloudLinux News
+	define_feedclass english
