@@ -159,9 +159,9 @@ feeddefaults
 
 feed 45m http://www.stableit.ru/feeds/posts/default?alt=rss
 	define name Pavel Odintsov
-	define_feedclass russian
+	define_feedclass user
 feed 45m https://4arodej.wordpress.com/category/openvz/feed/
-	define_feedclass russian
+	define_feedclass user
 feed 45m http://habrahabr.ru/rss/search/?q=openvz&target_type=posts
 	define_name Habrahabr posts
 	define_feedclass russian
@@ -173,9 +173,10 @@ feed 45m http://ru-openvz.livejournal.com/data/rss
 	define_feedclass russian
 feed 45m http://blog.the-jedi.co.uk/tag/openvz/feed/
 	define_name Simon's Journal
-	define_feedclass english
+	define_feedclass user
 feed 45m https://tresnet.ru/archives/tag/openvz/feed
 	define_name Ваганов Николай
+	define_feedclass russian
 feed 45m http://www.montanalinux.org/taxonomy/term/4/0/feed
 	define_name Scott Dowdle
 	define_feedclass english
@@ -187,7 +188,7 @@ feed 45m http://k001.livejournal.com/data/rss?tag=openvz
 	define_feedclass russian
 feed 45m http://openvz.livejournal.com/data/rss
 	define_name English OpenVZ community
-	define_feedclass english
+	define_feedclass user
 feed 45m http://knutov.livejournal.com/data/rss?tag=openvz
 	define_name Nick Knutov
 	define_feedclass russian
@@ -227,9 +228,6 @@ feed 45m https://www.cloudlinux.com/blog/rss/rss2/
 #feed 45m http://wiki.qemu.org/index.php?title=Special:RecentChanges&feed=rss
 #	define_name QEMU News
 #	define_feedclass english
-feed 45m http://dowload.openvz.org/index.php?title=News/events&action=feed&feed=rss
-	define_name OpenVZ News
-	define_feedclass news
 feed 45m http://criu.org/index.php?title=News/events&action=feed&feed=rss
 	define_name CRIU News
 	define_feedclass news
@@ -237,5 +235,8 @@ feed 45m https://openvz.org/w/index.php?title=News/events&action=feed&feed=rss
 	define_name OpenVZ News
 	define_feedclass news
 feed 45m https://openvz.org/w/index.php?title=News/updates&action=feed&feed=rss
+	define_name OpenVZ News
+	define_feedclass news
+feed 45m http://www.talkwalker.com/alerts/rss/QIG2IDHCO32HAOENRPVXZAR3XMOBP2QXVL4B6SWQGG7CFSK54RX7IPZZKYTJEDFIK64L3B24CL2622BRCQUKNXKXBAVHENMYNUEEVTQWA4UUX55Z2WZ3QMAJSD226HXL
 	define_name OpenVZ News
 	define_feedclass news
