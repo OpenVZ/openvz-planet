@@ -233,3 +233,12 @@ feed 45m https://blogs.yandex.ru/search.rss?text=virtuozzo&ft=forum&holdres=mark
 feed 45m https://blogs.yandex.ru/search.rss?text=virtuozzo&ft=all&holdres=mark
 	define_name Yandex.Blogs
 	define_feedclass russian
+feed 45m http://stackoverflow.com/feeds/tag/openvz
+	define_name StackOverflow
+	define_feedclass english
+feed 45m http://www.quora.com/OpenVZ/rss
+	define_name Quora
+	define_feedclass english
+feed 45m http://www.reddit.com/r/virtuozzo/.rss
+	define_name Reddit
+	define_feedclass english
