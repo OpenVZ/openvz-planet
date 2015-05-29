@@ -15,13 +15,14 @@ see the [PlanetOpenVZ](https://openvz.org/PlanetOpenVZ) wiki page.
 ```
 $ sudo yum install -y git rawdog
 $ git clone https://github.com/ligurio/openvz-planet /var/www/planet.openvz.org/
-$ rawdog -d . -c config -u -w
+$ rawdog -d . -c config --update
+$ rawdog -d . -c config --write
 ```
 
 ```
 $ crontab -l
 
-*/5 * * * *     cd /var/www/planet.openvz.org; git pull; rawdog -d . -u -w
+*/3 * * * *     cd /var/www/planet.openvz.org; git pull; rawdog -d . --update; rawdog -d . --write
 ```
 
 ## See also:
