@@ -243,3 +243,6 @@ feed 45m https://openvz.org/w/index.php?title=News/updates&action=feed&feed=rss
 feed 45m https://github.com/xemul/criu/releases.atom
 	define_name OpenVZ News
 	define_feedclass news
+feed 45m http://blog.odin.com/?format=rss
+	define_name Odin News
+	define_feedclass news
