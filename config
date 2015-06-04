@@ -186,6 +186,16 @@ feed 45m http://blog.tataranovich.com/feeds/posts/default/-/openvz
 feed 45m http://k001.livejournal.com/data/rss?tag=openvz
 	define_name Kir Kolyshkin
 	define_feedclass russian
+feed 45m http://abraham1901.livejournal.com/data/rss?tag=openvz
+	define_feedclass russian
+feed 45m http://coolcold.livejournal.com/data/rss?tag=openvz
+	define_feedclass russian
+feed 45m http://kyzia.livejournal.com/data/rss?tag=openvz
+	define_feedclass russian
+feed 45m http://norguhtar.livejournal.com/data/rss?tag=openvz
+	define_feedclass russian
+feed 45m http://mas73r.livejournal.com/data/rss?tag=openvz
+	define_feedclass russian
 feed 45m http://openvz.livejournal.com/data/rss
 	define_name English OpenVZ community
 	define_feedclass user
