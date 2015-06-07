@@ -259,3 +259,6 @@ feed 45m http://blog.odin.com/?format=rss
 feed 45m http://debian.systs.org/feed
 	define_name debian.systs.org
 	define_feedclass english
+feed 45m http://www.cyberciti.biz/tips/search/openvz/feed/rss2/
+	define_name cyberciti.biz
+	define_feedclass english
