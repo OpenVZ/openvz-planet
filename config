@@ -256,3 +256,6 @@ feed 45m https://github.com/xemul/criu/releases.atom
 feed 45m http://blog.odin.com/?format=rss
 	define_name Odin News
 	define_feedclass news
+feed 45m http://debian.systs.org/feed
+	define_name debian.systs.org
+	define_feedclass english
