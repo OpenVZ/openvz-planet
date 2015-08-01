@@ -22,7 +22,7 @@ $ rawdog -d . -c config --write
 ```
 $ crontab -l
 
-*/3 * * * *     cd /var/www/planet.openvz.org; git pull; rawdog -d . --update; rawdog -d . --write
+*/3 * * * *     cd /var/www/planet.openvz.org && git pull && make
 ```
 
 ## See also:
