@@ -14,7 +14,7 @@ see the [Planet OpenVZ](https://openvz.org/Planet_OpenVZ) wiki page.
 
 ```
 $ sudo yum install -y git rawdog
-$ git clone https://github.com/ligurio/openvz-planet /var/www/planet.openvz.org/
+$ git clone https://src.openvz.org/scm/ovz/openvz-planet.git /var/www/planet.openvz.org/
 $ rawdog -d . -c config --update
 $ rawdog -d . -c config --write
 ```
