@@ -29,4 +29,5 @@ $ crontab -l
 
 * [Ubuntu Planet](http://planet.ubuntu.com/)
 * [KDE Planet](https://planetkde.org/)
+* [Kernel Planet](http://planet.kernel.org/)
 * http://www.planetplanet.org/
