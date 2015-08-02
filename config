@@ -168,6 +168,12 @@ feed 45m http://habrahabr.ru/rss/search/?q=openvz&target_type=posts
 feed 45m http://habrahabr.ru/rss/search/?q=openvz&target_type=comments
 	define_name Habrahabr comments
 	define_feedclass russian
+feed 45m http://habrahabr.ru/rss/search/?q=criu&target_type=posts
+	define_name Habrahabr posts
+	define_feedclass russian
+feed 45m http://habrahabr.ru/rss/search/?q=criu&target_type=comments
+	define_name Habrahabr comments
+	define_feedclass russian
 feed 45m http://ru-openvz.livejournal.com/data/rss
 	define_name Russian OpenVZ community
 	define_feedclass russian
