@@ -1,8 +1,5 @@
 
-all: update write
-
-write: update
-	rawdog -d . -c config --write
+all: update
 
 update:
-	rawdog -d . -c config --update
+	cd venus/; python planet.py -v ../config.ini
