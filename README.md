@@ -31,3 +31,4 @@ $ crontab -l
 * [KDE Planet](https://planetkde.org/)
 * [Kernel Planet](http://planet.kernel.org/)
 * http://www.planetplanet.org/
+* cplanet
