@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Planet OpenVZ</title>
+  <meta charset="utf8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/combined.css" rel="stylesheet">
+  <link href="css/css" rel="stylesheet" type="text/css">
+  <link href="css/planet.css" rel="stylesheet">
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="rss20.xml" />
+  <link rel="alternate" type="text/xml" title="RSS 1.0" href="rss10.xml" />
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-69551427-1', 'auto');
+  ga('send', 'pageview');
+</script>
+ <body>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-9">
+
+<TMPL_LOOP Items>
+<TMPL_IF new_date>
+<TMPL_UNLESS __FIRST__>
+### End <div class="channelgroup">
+</div>
+### End <div class="daygroup">
+</div>
+</TMPL_UNLESS>
+<div class="daygroup">
+<h2><TMPL_VAR new_date></h2>
+</TMPL_IF>
+
+<TMPL_IF new_channel>
+<TMPL_UNLESS new_date>
+### End <div class="channelgroup">
+</div>
+</TMPL_UNLESS>
+<div class="channelgroup">
+
+### Planet provides template variables for *all* configuration options for
+### the channel (and defaults), even if it doesn't know about them.  We
+### exploit this here to add hackergotchi faces to our channels.  Planet
+### doesn't know about the "face", "facewidth" and "faceheight" configuration
+### variables, but makes them available to us anyway.
+
+<h3><a href="<TMPL_VAR channel_link ESCAPE="HTML">" title="<TMPL_VAR channel_title_plain ESCAPE="HTML">"><TMPL_VAR channel_name></a></h3>
+<TMPL_IF channel_face>
+<img class="face" src="images/<TMPL_VAR channel_face ESCAPE="HTML">" width="<TMPL_VAR channel_facewidth ESCAPE="HTML">" height="<TMPL_VAR channel_faceheight ESCAPE="HTML">" alt="">
+</TMPL_IF>
+</TMPL_IF>
+
+
+<div class="entrygroup" id="<TMPL_VAR id>"<TMPL_IF channel_language> lang="<TMPL_VAR channel_language>"</TMPL_IF>>
+<TMPL_IF title>
+<h4<TMPL_IF title_language> lang="<TMPL_VAR title_language>"</TMPL_IF>><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h4>
+</TMPL_IF>
+<div class="entry">
+<div class="content"<TMPL_IF content_language> lang="<TMPL_VAR content_language>"</TMPL_IF>>
+<TMPL_VAR content>
+</div>
+
+### Planet also makes available all of the information from the feed
+### that it can.  Use the 'planet-cache' tool on the cache file for
+### a particular feed to find out what additional keys it supports.
+### Comment extra fields are 'author' and 'category' which we
+### demonstrate below.
+
+<p class="date">
+<a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_IF author>by <TMPL_VAR author ESCAPE="HTML"> at </TMPL_IF><TMPL_VAR date><TMPL_IF category> under <TMPL_VAR category></TMPL_IF></a>
+</p>
+</div>
+</div>
+
+<TMPL_IF __LAST__>
+### End <div class="channelgroup">
+</div>
+### End <div class="daygroup">
+</div>
+</TMPL_IF>
+</TMPL_LOOP>
+
+
+    </div>
+    <div class="col-md-3">
+
+<h2>Planet OpenVZ</h2>
+
+<div class="sidebar">
+<h2>About</h2>
+<p>Planet OpenVZ is a collection of thoughts from the users and developers.  If you are working on OpenVZ project you should <a href="https://wiki.openvz.org/Planet_OpenVZ">add your blog</a>. Subscribe to <a href="rss20.xml">RSS feed</a>.</p>
+
+<!--
+<h2>RSS Feeds</h2>
+<ul>
+<li><a href="rss10.xml"><img src="https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/512/rss-feeds.png" width="20" alt="RSS Feed"> RSS 1.0</a></li>
+<li><a href="rss20.xml"><img src="https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/512/rss-feeds.png" width="20" alt="RSS Feed"> RSS 2.0</a></li>
+</ul>
+-->
+
+<p>
+<h2>Tweets</h2>
+<a class="twitter-timeline" href="https://twitter.com/estet/lists/openvz-planet" data-widget-id="660893549211316224">Tweets from https://twitter.com/estet/lists/openvz-planet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</p>
+
+<h2>Subscriptions</h2>
+<ul>
+<TMPL_LOOP Channels>
+<li>
+<a href="<TMPL_VAR url ESCAPE="HTML">" title="subscribe"><img src="images/feed-icon-10x10.png" alt="(feed)"></a> <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
+</li>
+</TMPL_LOOP>
+</ul>
+
+<p>
+<strong>Last updated:</strong><br>
+<TMPL_VAR date><br>
+<em>All times are UTC.</em><br>
+</p>
+
+<p>
+<h2>Planetarium</h2>
+<ul>
+<li><a href="http://planet.kernel.org/">Planet Linux kernel</a></li>
+<li><a href="http://planet.openstack.org/">Planet OpenStack</a></li>
+<li><a href="http://planet.centos.org/">Planet CentOS</a></li>
+<li><a href="http://planet.debian.net/">Planet Debian</a></li>
+<li><a href="http://planet.fedoraproject.org/">Planet Fedora</a></li>
+</ul>
+</p>
+
+<p>
+<h2>OpenVZ News and Support</h2>
+<ul>
+<li><a href="https://blog.openvz.org/">OpenVZ blog</a></li>
+<li><a href="https://plus.google.com/+OpenVZorg">OpenVZ in Google Plus</a></li>
+<li><a href="https://twitter.com/_openvz_">OpenVZ in Twitter</a></li>
+<li><a href="https://forum.openvz.org/">OpenVZ Forum</a></li>
+</ul>
+</p>
+</div>
+
+</body></html>
