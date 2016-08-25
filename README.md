@@ -25,10 +25,11 @@ $ crontab -l
 */3 * * * *     cd /var/www/planet.openvz.org && git pull && git submodule update && make
 ```
 
-## See also:
+## The list of similar resources:
 
 * [Ubuntu Planet](http://planet.ubuntu.com/)
 * [KDE Planet](https://planetkde.org/)
 * [Kernel Planet](http://planet.kernel.org/)
+* [OpenBSD Planet](https://bronevichok.ru/openbsd-planet/)
 * http://www.planetplanet.org/
 * cplanet
